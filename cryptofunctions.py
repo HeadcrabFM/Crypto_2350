@@ -1,6 +1,7 @@
 # 2350 Соколов    |    +79217916237    |    M.L.Swgr@gmail.com
 # Модуль для используемых функций
 
+# Функция от Жени Россамахина 2350
 def slow_degree(number, degree, mod, lvl=2):
     """Быстрое возведение в степень по модулю"""
     low_degree = degree // lvl
@@ -44,7 +45,8 @@ def fermaeuler2(a, b, m):
     return x
 
 
-# Проверка на простое надо добавить Алгоритм миллера = ?
+# Проверка на простое надопоменять тк медленный
+# Алгоритм миллера = ?
 def issimple(a):
     """Проверка на простоту перебором"""
     for i in range(2, (a // 2) + 1):
@@ -80,11 +82,19 @@ def inputprimecheck(message=str, message_fail=str):
         x = int(input(message_fail))
     return x
 
-
+# !!!
+# тут надо исправить. Тк тут не два числа на взаимную простоту проверяется а функция эйлера. Надо ВЕЗДЕ пофиксить
 def inputmutprimecheck(y, message=str, message_fail=str):
     """функция ввода с клавиатуры с проверкой на взаимную простоту"""
     x = int(input(message))
     while (mutprime(x, eul(y)) != True):
+        x = int(input(message_fail))
+    return x
+
+def inputmutprimecheck2(y, message=str, message_fail=str):
+    """функция ввода с клавиатуры с проверкой на взаимную простоту"""
+    x = int(input(message))
+    while (mutprime(x, y) != True):
         x = int(input(message_fail))
     return x
 
