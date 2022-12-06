@@ -1,5 +1,6 @@
 # 2350 Соколов    |    +79217916237    |    M.L.Swgr@gmail.com
 # Модуль для используемых функций
+from math import *
 
 # Функция от Жени Россамахина 2350
 def slow_degree(number, degree, mod, lvl=2):
@@ -168,3 +169,23 @@ def text_equalcheck2(message=list, message2=list):
     if message == message2:
         return True
     return False
+
+# 1.12
+def input_mutprime_full(spisok, prompt=str, message_fail=str):
+    """Функция ввода переменой m, чтобы она была взаимно проста
+    со всеми элементами списка spisok"""
+    m = int(input(prompt))
+    while rowcheck(spisok, m)!=True:
+        m = int(input(message_fail))
+    return m
+
+
+def rowcheck(spisok,m):
+    """Функция для проверки того
+    что некая m взаимно проста
+    со всеми элеметами списка spisok"""
+    if len(spisok)>1:
+        for i in range(len(spisok)):
+            if gcd(m,spisok[i])!=1 or m==spisok[i]:
+                return False
+    return True
