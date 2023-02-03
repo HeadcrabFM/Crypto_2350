@@ -33,5 +33,7 @@ def prot_nokey():
     return res
 
 
-prot_nokey()  # в итоге получаем функцию протокола с возможностью ввода данных кот. можно вызвать одной строкой
-input('\n\n * * * Press any key to exit... * * *')
+def launch():
+    prot_nokey()  # в итоге получаем функцию протокола с возможностью ввода данных кот. можно вызвать одной строкой
+    input('\n\n * * * Press any key to exit... * * *')
+    cryptofunctions.mainmenu()

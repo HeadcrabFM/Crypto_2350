@@ -1,6 +1,7 @@
 # 2350 Соколов    |    +79217916237    |    M.L.Swgr@gmail.com
 # Модуль для используемых функций
 from math import *
+import launcher
 
 # Функция от Жени Россамахина 2350
 def slow_degree(number, degree, mod, lvl=2):
@@ -86,7 +87,7 @@ def inputprimecheck(message=str, message_fail=str):
 # !!!
 # тут надо исправить. Тк тут не два числа на взаимную простоту проверяется а функция эйлера. Надо ВЕЗДЕ пофиксить
 def inputmutprimecheck(y, message=str, message_fail=str):
-    """функция ввода с клавиатуры с проверкой на взаимную простоту"""
+    """функция ввода с клавиатуры с проверкой на взаимную простоту с функцией Эйлера"""
     x = int(input(message))
     while (mutprime(x, eul(y)) != True):
         x = int(input(message_fail))
@@ -189,3 +190,7 @@ def rowcheck(spisok,m):
             if gcd(m,spisok[i])!=1 or m==spisok[i]:
                 return False
     return True
+
+# * * * доп. функция для работы лаунчера * * *
+def mainmenu():
+    launcher.mainlauncher()

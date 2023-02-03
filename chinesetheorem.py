@@ -46,7 +46,7 @@ def cht_process(system):
         Ni_list.append(fermaeuler(Mi_list[i], system[1][i]))
         print(f'N{i} = {Ni_list[i]}')  # вывод полученных Ni
 
-    # Находим х = ROWSUM(ai*Ni*Mi(mod M)
+    # Находим х = ROWSUM (ai*Ni*Mi(mod M))
     x = 0
     for i in range(len(system[0])):
         x += system[0][i] * Ni_list[i] * Mi_list[i]
@@ -66,13 +66,14 @@ def cht():
     system = cht_input()
     cht_process(system)
 
-
-a = 0
-i = 1
-while a == 0:  # Цикл для зацикливания тестирования
-    print(' * * * КИТАЙСКАЯ ТЕОРЕМА ОБ ОСТАТКАХ * * *')
-    print(f'\n>>> ТЕСТ №{i}')
-    cht()  # получаем функцию, которую можно вызвать в 1 строчку без передачи аргументов на вход
-    a = int(input('\nНажмите 0 для продолжения тестирования, любую другую цифру для выхода: '))
-    i += 1
-input('\nКОНЕЦ ТЕСТИРОВАНИЯ\n\n* * * Press Enter to exit... * * *')
+def launch():
+    a = 0
+    i = 1
+    while a == 0:  # Цикл для зацикливания тестирования
+        print(' * * * КИТАЙСКАЯ ТЕОРЕМА ОБ ОСТАТКАХ * * *')
+        print(f'\n>>> ТЕСТ №{i}')
+        cht()  # получаем функцию, которую можно вызвать в 1 строчку без передачи аргументов на вход
+        a = int(input('\nНажмите 0 для продолжения тестирования, любую другую цифру для выхода: '))
+        i += 1
+    input('\nКОНЕЦ ТЕСТИРОВАНИЯ\n\n* * * Press Enter to exit... * * *')
+    mainmenu()

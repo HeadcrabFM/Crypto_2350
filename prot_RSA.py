@@ -46,5 +46,7 @@ def RSA(): # Rivest Shamir Adelman
     rsa_process(m1, l2[2], l2[3], l2[4])
     rsa_check(m,m1)
     input('Print any key to exit . . .')
+    cryptofunctions.mainmenu()
 
-RSA() # вызов функции одной строкой
+def launch():
+    RSA() # вызов функции одной строкой
